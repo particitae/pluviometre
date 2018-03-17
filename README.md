@@ -23,7 +23,7 @@ Les travaux effectués se répartissent en plusieurs parties :
 -   La recherche sur des méthodes de détections de polluant dans l’eau.
 
 ----------
-#Introduction
+# Introduction
 
 
 Cette documentation présentera deux études de l’art réalisées : l’une sur la détection de polluant dans l’eau et l’autre sur les différentes méthodes de mesures de hauteur d’eau. Ensuite l’architecture, le dimensionnement de la structure et les différents systèmes du pluviomètre seront décrites avant de finir sur la partie modélisation et résultats obtenus.
@@ -32,7 +32,7 @@ L'ensemble des fichiers sont sous licence GNU General Public License v3.0.
 ----------
 # État de l’art
 
-##1)  Mesure du niveau d'eau
+## 1)  Mesure du niveau d'eau
 
 Plusieurs capteurs peuvent être envisagés
 
@@ -73,12 +73,12 @@ n’est pas linéaire. De plus lorsqu’on observe le signal à l’oscilloscope
 
 Le capteur ultrason est le plus adapté pour une mesure de hauteur d’eau. Un capteur peu onéreux et possédant une incertitude de mesure de +/- 2 mm est le HC-SR04. Cependant nous avons dimensionné certaines parties du pluviomètre en fonction du capteur ST045. Le capteur ultrason n’a pas pu s’adapter sur notre pluviomètre en raison de ses dimensions.
 
-##2)  Mesure de la qualité de l'eau
+## 2)  Mesure de la qualité de l'eau
 
-###-   Mesure du pH
+### -   Mesure du pH
 Une première mesure simple à mettre en œuvre est celle du pH. Les pH de l'eau de pluie pouvant varier en fonction de divers paramètres cette mesure paraît pertinente.
 
-###- Mesure de concentrations en polluants
+### - Mesure de concentrations en polluants
 Un des objectifs du pluviomètre participatif est de détecter des polluants dans l’eau de pluie.
 
 L’objectif est de trouver une méthode permettant de détecter plusieurs substances au même moment de manière non contaminatrice.
@@ -112,7 +112,7 @@ spectrométrie semble cependant la plus adaptée à de telles mesures dans le ca
 
 # Technique
 
-##1) Architecture et dimensionnement
+## 1) Architecture et dimensionnement
 
 L’architecture du pluviomètre et les dimensions de ses différents composants ont été définit en fonction de plusieurs facteurs.
 
@@ -130,7 +130,7 @@ manchon (7) constitue le fond du pluviomètre. La stabilité du pluviomètre est
 Le diamètre et la hauteur du tube extérieur ne devaient pas être trop grand pour permettre le transport aisé du pluviomètre mais ce tube devait toutefois représenter un espace suffisant pour y accueillir l’électronique. La différence de diamètre entre le tube intérieur et l’entonnoir (donc le tube extérieur) a été réfléchit en fonction des quantités de précipitations courantes et du bon fonctionnement des capteurs. Le pluviomètre doit pouvoir fournir des mesures régulièrement (de l’ordre de la minute) même lorsque qu’il ne pleut pas abondamment.
 Le PH-mètre doit être immergé dans un minimum de 2 cm d’eau. La précision du capteur de hauteur d’eau est de l’ordre du millimètre. Une grande part des pluies débitant moins de 1 mm par jour, il a été décidé d’avoir un facteur 5 entres les diamètres des tubes afin d’obtenir une multiplication 25 entres les vraies précipitations et la hauteur d’eau collectée. Un schéma du dimensionnement est disponible à cette [adresse](https://upload.wikimedia.org/wikipedia/commons/3/30/Sch%C3%A9ma_du_dimensionnement_du_pluviom%C3%A8tre_-_Particitae.png).
 
-##2) Systèmes
+## 2) Systèmes
 
 **Le système mécanique**
 
@@ -197,14 +197,14 @@ La carte Arduino doit être alimentée par une tension de 5V or la batterie dél
 
 Le montage électronique a été schématisé sur le logiciel Fritzing afin qu’il soit reproductible ( [lien](https://upload.wikimedia.org/wikipedia/commons/6/6c/C%C3%A2blage_%C3%A9lectronique_du_pluviom%C3%A8tre_%28Fritzing%29_-_Particitae.jpg) )
 
-##3) Modélisation
+## 3) Modélisation
 
 ![Modélisation du Pluviomètre](https://upload.wikimedia.org/wikipedia/commons/8/83/Mod%C3%A9lisation-du-pluviometre.jpg  "Modélisation du Pluviomètre")
 
 Le pluviomètre est modélisé à l’aide d’un logiciel de conception assisté par ordinateur (CAO). Chaque composant du pluviomètre a été dessiné à échelle réelle afin de permettre à un fabricant de pouvoir réaliser certaines pièces complexes avec une imprimante 3D. Lors de l’impression, il est important d’utiliser une bobine de fil ABS car le PLA est moins résistant et se dégrade au contact de l’eau.
 Les fichiers de modélisation sont disponibles à cette [adresse](https://github.com/particitae/pluviometre/tree/master/Fichiers_Solidworks)
 
-##4)  Résultats
+## 4)  Résultats
 
 -   Capteur de niveau d’eau:
 
@@ -218,9 +218,14 @@ Puisque les valeurs ne varient plus au-dessus de 1.6 centimètres d’eau, nous 
 Dans cette gamme de hauteur d’eau, nous avons pu mettre en évidence deux évolutions distinctes selon la hauteur d’eau :
 
 -   De 0 à 0,9 centimètres, évolution exponentielle :
+
+
 ![Valeur en sortie du capteur](https://upload.wikimedia.org/wikipedia/commons/b/b4/Valeur_en_sortie_du_capteur_-_R%C3%A9sultats_scientifiques.jpg  "Valeur en sortie du capteur")
 
+
 -   De 0,9 à 1,6 centimètres, évolution linéaire :
+
+
 ![Valeur en sortie du capteur](https://upload.wikimedia.org/wikipedia/commons/f/f5/Valeur_en_sortie_du_capteur2_-_R%C3%A9sultats_scientifiques.jpg  "Valeur en sortie du capteur")
 
 
@@ -239,11 +244,15 @@ Par ailleurs, nous avons pu observer une dérive non négligeable du capteur lor
 Dans l’optique de tester la dérive de notre Sonde PH et son interface SEN0161, nous avons testé le capteur dans deux conditions :
 
 -   Dérive à température constante :
+
+
 ![Dérive à température constante](https://upload.wikimedia.org/wikipedia/commons/4/44/D%C3%A9rive_du_pHmetre_temperature_constante_-_R%C3%A9sultats_scientifiques.jpg  "Dérive à température constante")
 
 Nous constatons une dérive maximale de 0,04 pour la mesure du pH. Il semble donc que les mesures du pH-mètre soient fiables quel que soit le moment où l’on les prendra.
 
 -   Dérive en condition normal d'utilisation du pluviomètre, à l'extérieur toute la journée :
+
+
 ![Dérive du pH-mètre durant une journée](https://upload.wikimedia.org/wikipedia/commons/1/13/D%C3%A9rive_du_pHmetre_durant_journee_-_R%C3%A9sultats_scientifiques.jpg  "Dérive du pH-mètre durant une journée")
 
 Au cours de mesure effectuées sur une journée complète en extérieurs, la dérive observée n'a été que de quelques centièmes d'unité pH. 
@@ -260,29 +269,53 @@ Liste du matériel utilisé
 -------------------------------------
 
 Booster 5 V U1V11F5	1
+
 Accu Li-Ion 3,7 V 1050 mAh	1
+
 Cellule solaire SOL3W	1
+
 Sonde PH + interface SEN0161 	1
+
 Module capteur de niveau d'eau ST045 	1
+
 Module horloge temps réel ADA3295 	1
+
 Kit émetteur-récepteur 433MHZ 	1
+
 Servomoteur FS5103B	2
+
 Carte Nano 3.0	1
+
 Raspberry Pi 2 Modèle B	1
+
 Module chargeur accus Li-Ion et LiPo MM104 	1
+
 Détecteur de vapeur et de pluie EF04024 	1
+
 Boîtier de dérivation 	1
+
 Tube PVC : 160mm, longueur 30cm 	1
+
 Tube PVC : 160mm, longueur 15cm 	1
+
 Tube PVC : 30mm, longueur 17cm 	1
+
 Manchon 30/30mm 	1
+
 Entonnoir vidange d’huile  	1
+
 Plaque PVC à découper 	1
+
 Robinet plastique de cuve d’eau 	1
+
 Glissières (pour les pieds du pluviomètre)	4
+
 Interrupteurs	2
+
 Plaque de prototypage	1
+
 Fils électriques	
+
 Gaine thermo rétractable	
 
 -------------------------------------
