@@ -211,7 +211,10 @@ Les fichiers de modélisation sont disponibles à cette [adresse](https://github
 Contrairement aux indications de la datasheet du fournisseur, l’évolution de la réponse du capteur avec la hauteur d’eau n’est pas linéaire. Nous avons donc effectué un étalonnage du capteur à l’aide d’un bécher dans lequel nous faisions varier la hauteur d’eau pas à pas pour obtenir la courbe suivante :
 
 Évolution de la réponse du capteur en fonction de la hauteur d’eau
+
+
 ![Evolution de la réponse du capteur en fonction de la hauteur d’eau](https://upload.wikimedia.org/wikipedia/commons/e/e2/Evolution_de_la_r%C3%A9ponse_du_capteur_en_fonction_de_la_hauteur_d%E2%80%99eau_-_R%C3%A9sultats_scientifiques.jpg) 
+
 
 Puisque les valeurs ne varient plus au-dessus de 1.6 centimètres d’eau, nous avons conclu que notre capteur ST045 ne pouvait être utilisé que dans la gamme de hauteur de 0 à 1,6 centimètres.
 
