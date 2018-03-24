@@ -283,7 +283,7 @@ Module capteur de niveau d'eau ST045 	1
 
 Module horloge temps réel ADA3295 	1
 
-Kit émetteur-récepteur 433MHZ 	1
+Émetteur-Récepteur 2.4G nRF24L01 	1
 
 Servomoteur FS5103B	2
 
